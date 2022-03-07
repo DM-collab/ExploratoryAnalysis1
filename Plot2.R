@@ -18,5 +18,3 @@ plot(subTxtGlobal$Time,as.numeric(as.character(subTxtGlobal$Global_active_power)
 
 #------------Format Graph------------------------------------------------
 title(main="Global Active Power Vs Time")
-
-
