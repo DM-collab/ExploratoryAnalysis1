@@ -12,6 +12,13 @@ hist(as.numeric(as.character(subTxtGlobal$Global_active_power)),col="red",main="
 #------------Format Graph------------------------------------------------
 title(main="Global Active Power")
 
+png("plot1.png", width=480, height=480)
+
+
+
+
+
+
 #############PLOT 2 vOLTAGE VS DATE TIME################################
 #------------Dataset load and formatting----------------------------
 TxtGlobal <- read.table("household_power_consumption.txt",skip=1,sep=";")
@@ -34,6 +41,14 @@ plot(subTxtGlobal$Time,as.numeric(as.character(subTxtGlobal$Global_active_power)
 title(main="Global Active Power Vs Time")
 
 
+  
+  
+  
+  
+  
+  
+  
+  
 
 
 ##############PLOT 3 ENERGY SUB METERING VS DATE TIME######################
@@ -57,10 +72,24 @@ plot(subTxtGlobal$Time,subTxtGlobal$Sub_metering_1,type="n",xlab="",ylab="Energy
 with(subTxtGlobal,lines(Time,as.numeric(as.character(Sub_metering_1))))
 with(subTxtGlobal,lines(Time,as.numeric(as.character(Sub_metering_2)),col="red"))
 with(subTxtGlobal,lines(Time,as.numeric(as.character(Sub_metering_3)),col="blue"))
-legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+legend("topright", col = c("black", "red", "blue"), lty = 1, lwd = 2, 
+       bty = "n",
+       legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+
 
 #------------Format Graph------------------------------------------------
 title(main="Energy sub-metering")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -105,4 +134,5 @@ with(subTxtGlobal,{
   
   plot(subTxtGlobal$Time,as.numeric(as.character(subTxtGlobal$Global_reactive_power)),type="l",xlab="datetime",ylab="Global_reactive_power")
   
+  png("plot4.png", width=480, height=480)
                 })
